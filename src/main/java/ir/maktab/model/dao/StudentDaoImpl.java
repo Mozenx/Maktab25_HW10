@@ -20,6 +20,7 @@ public class StudentDaoImpl extends BaseDaoImpl<Student> implements StudentDao {
         return "Student";
     }
 
+    //implement findByName method
     @Override
     public List<Student> findByName(String name) {
         Session session = factory.openSession();
@@ -34,6 +35,7 @@ public class StudentDaoImpl extends BaseDaoImpl<Student> implements StudentDao {
         return students;
     }
 
+    //implement noLiveInCity method
     @Override
     public List<Student> notLiveInCity(String city) {
 

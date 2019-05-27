@@ -7,6 +7,7 @@ import java.io.Serializable;
 @Table(name = "students")
 public class Student implements Serializable {
 
+    //declare fields
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -21,15 +22,18 @@ public class Student implements Serializable {
     @JoinColumn(name = "student_address")
     private Address address;
 
+    //declare default constructor
     public Student() {
     }
 
+    //declare constructor
     public Student(String firstName, String lastName, Address address) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;
     }
 
+    //declare setter and getter method
     public long getId() {
         return id;
     }
@@ -62,6 +66,7 @@ public class Student implements Serializable {
         this.address = address;
     }
 
+    //override toString method of Object class
     @Override
     public String toString() {
         return "Student{" +
@@ -71,4 +76,4 @@ public class Student implements Serializable {
                 ", address=" + address +
                 '}';
     }
-}
+}//end of class

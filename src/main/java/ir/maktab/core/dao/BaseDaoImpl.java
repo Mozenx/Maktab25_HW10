@@ -26,7 +26,7 @@ public abstract class BaseDaoImpl<E extends Serializable> implements BaseDao<E> 
         session.getTransaction().commit();
 
         session.close();
-    }
+    }//end of create method
 
     @Override
     public E update(E e) {
@@ -41,7 +41,7 @@ public abstract class BaseDaoImpl<E extends Serializable> implements BaseDao<E> 
         session.close();
 
         return e;
-    }
+    }//end of update method
 
     @Override
     public E read(Serializable id) {
@@ -54,7 +54,7 @@ public abstract class BaseDaoImpl<E extends Serializable> implements BaseDao<E> 
         session.close();
 
         return e;
-    }
+    }//end of read method
 
     @Override
     public void delete(Serializable id) {
@@ -68,5 +68,6 @@ public abstract class BaseDaoImpl<E extends Serializable> implements BaseDao<E> 
 
         session.close();
 
-    }
-}
+    }//end of delete method
+
+}//end of class

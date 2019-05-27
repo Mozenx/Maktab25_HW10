@@ -8,6 +8,7 @@ import java.time.LocalDate;
 @Table(name = "teachers")
 public class Teacher implements Serializable {
 
+    //declare field of Teacher class
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -31,9 +32,11 @@ public class Teacher implements Serializable {
     @JoinColumn(name = "teacher_address")
     private Address address;
 
+    //declare default constructor
     public Teacher() {
     }
 
+    //declare constructor to create object from Teacher class
     public Teacher(String firstName, String lastName, long teacherCode, double salary, LocalDate birthday,
                    Address address) {
         this.firstName = firstName;
@@ -44,6 +47,7 @@ public class Teacher implements Serializable {
         this.address = address;
     }
 
+    //create setter and getter method for each field of this class
     public long getId() {
         return id;
     }
@@ -100,6 +104,7 @@ public class Teacher implements Serializable {
         this.address = address;
     }
 
+    //override toString method for show each of field
     @Override
     public String toString() {
         return "Teacher{" +
@@ -112,4 +117,4 @@ public class Teacher implements Serializable {
                 ", address=" + address +
                 '}';
     }
-}
+}//end of class

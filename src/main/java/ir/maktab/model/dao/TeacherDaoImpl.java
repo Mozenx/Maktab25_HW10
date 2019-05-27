@@ -34,7 +34,7 @@ public class TeacherDaoImpl extends BaseDaoImpl<Teacher> implements  TeacherDao{
         session.getTransaction().commit();
 
         session.close();
-    }
+    }//end of removeByTeacherCode
 
     @Override
     public List<Teacher> showYoungestAndOldest() {
@@ -50,7 +50,7 @@ public class TeacherDaoImpl extends BaseDaoImpl<Teacher> implements  TeacherDao{
         session.close();
 
         return teachers;
-    }
+    }//end of showYoungestAndOldest method
 
     @Override
     public List<Teacher> showMaxAndMinSalary() {
@@ -66,7 +66,7 @@ public class TeacherDaoImpl extends BaseDaoImpl<Teacher> implements  TeacherDao{
         session.close();
 
         return teachers;
-    }
+    }//end of showMaxAndMinSalary method
 
     @Override
     public List<Teacher> liveInCity(String city) {
@@ -83,10 +83,10 @@ public class TeacherDaoImpl extends BaseDaoImpl<Teacher> implements  TeacherDao{
         session.close();
 
         return teachers;
-    }
+    }//end of liveInCity method
 
     @Override
-    public List<Teacher> beingNumberWith(String number) {
+    public List<Teacher> beginNumberWith(String number) {
 
         Session session = factory.openSession();
 
@@ -98,10 +98,10 @@ public class TeacherDaoImpl extends BaseDaoImpl<Teacher> implements  TeacherDao{
         session.close();
 
         return teachers;
-    }
+    }//end of beginNumberWith method
 
     @Override
-    public List<Teacher> beingNumberWithLiveInCity(String number, String city) {
+    public List<Teacher> beginNumberWithLiveInCity(String number, String city) {
 
         Session session = factory.openSession();
 
@@ -113,5 +113,5 @@ public class TeacherDaoImpl extends BaseDaoImpl<Teacher> implements  TeacherDao{
         session.close();
 
         return teachers;
-    }
-}
+    }//end of beginNumberWithLiveInCity method
+}//end of class

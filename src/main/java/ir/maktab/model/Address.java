@@ -6,6 +6,7 @@ import javax.persistence.*;
 @Table(name = "addresses")
 public class Address {
 
+    //declare field of Address class
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -25,9 +26,11 @@ public class Address {
     @Column(name = "postal_code")
     private String postalCode;
 
+    //declare default constructor
     public Address() {
     }
 
+    //declare constructor
     public Address(String city, String state, String number, String postalAddress, String postalCode) {
         this.city = city;
         this.state = state;
@@ -36,6 +39,7 @@ public class Address {
         this.postalCode = postalCode;
     }
 
+    //override toString method of Object class
     @Override
     public String toString() {
         return "Address{" +
@@ -48,6 +52,7 @@ public class Address {
                 '}';
     }
 
+    //declare setter and getter method
     public Long getId() {
         return id;
     }
@@ -95,4 +100,5 @@ public class Address {
     public void setPostalCode(String postalCode) {
         this.postalCode = postalCode;
     }
-}
+    
+}//end of class

@@ -18,6 +18,7 @@ public class MainApp {
 
         SessionFactory factory = new Configuration().configure().buildSessionFactory();
 
+        //create object of Address class
         Address address = new Address("tehran","tehran","0912123456","azadi","12321");
         Address address1 = new Address("mashad","korasan razavi","0912654321","azadi","123221");
         Address address2 = new Address("tehran","tehran","0912123556","gomrok","1232121");
@@ -25,6 +26,7 @@ public class MainApp {
         Address address4 = new Address("tehran","tehran","0912123856","azadi","1232321");
         Address address5 = new Address("tehran","tehran","0912223456","azadi","12321578");
 
+        //create object of Teacher class
         Teacher teacher = new Teacher("Ali","Hasani",123745L,
                 2000, LocalDate.of(1380,01,31),address);
         Teacher teacher1 = new Teacher("Milad","Jabari",123456L,
@@ -32,6 +34,7 @@ public class MainApp {
         Teacher teacher2 = new Teacher("Reza","Madani",122334L,
                 344,LocalDate.of(1356,11,14),address2);
 
+        //create object of Student class
         Student student = new Student("Jafar","Soltani",address4);
         Student student1 = new Student("Soltan", "Jafari",address3);
         Student student2 = new Student("Amir", "Razavi",address5);
@@ -39,22 +42,26 @@ public class MainApp {
 
         TeacherDao dao = new TeacherDaoImpl(factory);
         StudentDao dao1 = new StudentDaoImpl(factory);
-//
+
+        //add student to table
         dao1.create(student);
         dao1.create(student1);
         dao1.create(student2);
 
+        //add teachers to table
         dao.create(teacher);
         dao.create(teacher1);
         dao.create(teacher2);
-        dao.removeByTeacherCode(12345);
+
+//        dao.removeByTeacherCode(12345);
 
 //        System.out.println(dao.showMaxAndMinSalary());
 //        System.out.println(dao.showYoungestAndOldest());
 
 //        System.out.println(dao1.findByName("Jafari"));
 
+        //close SessionFactory
         factory.close();
 
-    }
-}
+    }//end of main method
+}//end of class
