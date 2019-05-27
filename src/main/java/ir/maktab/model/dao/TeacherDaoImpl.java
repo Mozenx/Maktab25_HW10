@@ -84,4 +84,19 @@ public class TeacherDaoImpl extends BaseDaoImpl<Teacher> implements  TeacherDao{
 
         return teachers;
     }
+
+    @Override
+    public List<Teacher> beingNumberWith(String number) {
+
+        Session session = factory.openSession();
+
+        List<Teacher> teachers;
+
+        teachers = session.createQuery("select t from Teacher t join t.address where t.address.number like :i",Teacher.class)
+                .setParameter("i",number+"%").list();
+
+        session.close();
+
+        return teachers;
+    }
 }

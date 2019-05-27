@@ -15,6 +15,8 @@ public class QueryApp {
 
         System.out.println(dao.liveInCity("tehran"));
 
+        System.out.println(dao.beingNumberWith("0912"));
+
         factory.close();
     }
 }
