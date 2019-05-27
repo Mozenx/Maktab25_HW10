@@ -12,16 +12,18 @@ public class OrginizeWordsByNoLetter {
         List<String > names = List.of("Amir", "Hatef", "Mehran", "Mojtaba", "Mohammad", "Ali", "Davood", "Reza", "Mohsen");
 
 
-        //classification by number letter of word
+        //classification word by number of letters
         Map<Integer,List<String>> result = names.stream()
                 .collect(groupingBy(String::length));
 
-        //classification word by number of letters and count quantity in each list
+        //classification word by number of letters and counting quantity word in each list
         Map<Integer,Long> result1 = names.stream()
                 .collect(groupingBy(String::length,counting()));
 
 
+        System.out.println("Classification word by number of letters:");
         System.out.println(result);
+        System.out.println("\nClassification word by number of letters and counting quantity word in each list:");
         System.out.println(result1);
 
     }
