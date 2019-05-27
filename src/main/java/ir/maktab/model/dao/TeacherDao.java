@@ -13,4 +13,6 @@ public interface TeacherDao extends BaseDao<Teacher> {
     List<Teacher> showYoungestAndOldest();
 
     List<Teacher> showMaxAndMinSalary();
+
+    List<Teacher> liveInCity(String city);
 }

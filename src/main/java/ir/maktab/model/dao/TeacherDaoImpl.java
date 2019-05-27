@@ -67,4 +67,9 @@ public class TeacherDaoImpl extends BaseDaoImpl<Teacher> implements  TeacherDao{
 
         return teachers;
     }
+
+    @Override
+    public List<Teacher> liveInCity(String city) {
+        return null;
+    }
 }
