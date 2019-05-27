@@ -33,4 +33,19 @@ public class StudentDaoImpl extends BaseDaoImpl<Student> implements StudentDao {
 
         return students;
     }
+
+    @Override
+    public List<Student> notLiveInCity(String city) {
+
+        Session session = factory.openSession();
+
+        List<Student> students;
+
+        students = session.createQuery("select s from Student s join s.address where not s.address.city =:i",Student.class)
+                .setParameter("i", city).getResultList();
+
+        session.close();
+
+        return students;
+    }
 }

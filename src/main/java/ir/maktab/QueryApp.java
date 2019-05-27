@@ -1,5 +1,7 @@
 package ir.maktab;
 
+import ir.maktab.model.dao.StudentDao;
+import ir.maktab.model.dao.StudentDaoImpl;
 import ir.maktab.model.dao.TeacherDao;
 import ir.maktab.model.dao.TeacherDaoImpl;
 import org.hibernate.SessionFactory;
@@ -13,11 +15,15 @@ public class QueryApp {
 
         TeacherDao dao = new TeacherDaoImpl(factory);
 
-        System.out.println(dao.liveInCity("tehran"));
+        StudentDao dao1 = new StudentDaoImpl(factory);
 
-        System.out.println(dao.beingNumberWith("0912"));
+//        System.out.println(dao.liveInCity("tehran"));
+//
+//        System.out.println(dao.beingNumberWith("0912"));
+//
+//        System.out.println(dao.beingNumberWithLiveInCity("0912", "tehran"));
 
-        System.out.println(dao.beingNumberWithLiveInCity("0912", "tehran"));
+        System.out.println(dao1.notLiveInCity("tehran"));
 
         factory.close();
     }
