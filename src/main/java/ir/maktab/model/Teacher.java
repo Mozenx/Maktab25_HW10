@@ -27,15 +27,20 @@ public class Teacher implements Serializable {
     @Column(name = "birthday")
     private LocalDate birthday;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    private Address address;
+
     public Teacher() {
     }
 
-    public Teacher(String firstName, String lastName, long teacherCode, double salary, LocalDate birthday) {
+    public Teacher(String firstName, String lastName, long teacherCode, double salary, LocalDate birthday,
+                   Address address) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.teacherCode = teacherCode;
         this.salary = salary;
         this.birthday = birthday;
+        this.address = address;
     }
 
     public long getId() {
@@ -86,6 +91,14 @@ public class Teacher implements Serializable {
         this.birthday = birthday;
     }
 
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
     @Override
     public String toString() {
         return "Teacher{" +
@@ -95,6 +108,7 @@ public class Teacher implements Serializable {
                 ", teacherCode=" + teacherCode +
                 ", salary=" + salary +
                 ", birthday=" + birthday +
+                ", address=" + address +
                 '}';
     }
 }

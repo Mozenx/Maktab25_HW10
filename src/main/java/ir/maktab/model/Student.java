@@ -17,12 +17,16 @@ public class Student implements Serializable {
     @Column(name = "last_name")
     private String lastName;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    private Address address;
+
     public Student() {
     }
 
-    public Student(String firstName, String lastName) {
+    public Student(String firstName, String lastName, Address address) {
         this.firstName = firstName;
         this.lastName = lastName;
+        this.address = address;
     }
 
     public long getId() {
@@ -49,12 +53,21 @@ public class Student implements Serializable {
         this.lastName = lastName;
     }
 
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
     @Override
     public String toString() {
         return "Student{" +
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
+                ", address=" + address +
                 '}';
     }
 }
