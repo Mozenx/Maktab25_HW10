@@ -12,7 +12,10 @@ public class OrginizeWordsByNoLetter {
         List<String > names = List.of("Amir", "Hatef", "Mehran", "Mojtaba", "Mohammad", "Ali", "Davood", "Reza", "Mohsen");
 
 
-        
+        //classification by number letter of word
+        Map<Integer,List<String>> result = names.stream()
+                .collect(groupingBy(String::length));
+
 
 
     }
