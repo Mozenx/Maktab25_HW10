@@ -17,11 +17,12 @@ public class OrginizeWordsByNoLetter {
                 .collect(groupingBy(String::length));
 
         //classification word by number of letters and count quantity in each list
-        Map<Integer,Long> result2 = names.stream()
+        Map<Integer,Long> result1 = names.stream()
                 .collect(groupingBy(String::length,counting()));
 
+
         System.out.println(result);
-        System.out.println(result2);
+        System.out.println(result1);
 
     }
 }
