@@ -9,4 +9,6 @@ public interface StudentDao extends BaseDao<Student> {
 
     List<Student> findByName(String name);
 
+    List<Student> notLiveInCity(String name);
+
 }
