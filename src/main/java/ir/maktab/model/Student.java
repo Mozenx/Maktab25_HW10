@@ -18,6 +18,7 @@ public class Student implements Serializable {
     private String lastName;
 
     @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "student_address")
     private Address address;
 
     public Student() {

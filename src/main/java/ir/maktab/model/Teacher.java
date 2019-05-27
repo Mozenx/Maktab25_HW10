@@ -28,6 +28,7 @@ public class Teacher implements Serializable {
     private LocalDate birthday;
 
     @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "teacher_address")
     private Address address;
 
     public Teacher() {

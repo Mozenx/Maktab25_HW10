@@ -17,6 +17,7 @@
 
         <mapping class="ir.maktab.model.Teacher"></mapping>
         <mapping class="ir.maktab.model.Student"></mapping>
+        <mapping class="ir.maktab.model.Address"></mapping>
 
 
     </session-factory>
