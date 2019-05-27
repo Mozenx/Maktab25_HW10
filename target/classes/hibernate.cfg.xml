@@ -13,7 +13,7 @@
 
         <property name="show_sql">false</property>
 
-        <property name="hibernate.hbm2ddl.auto">create</property>
+<!--        <property name="hibernate.hbm2ddl.auto">create</property>-->
 
         <mapping class="ir.maktab.model.Teacher"></mapping>
         <mapping class="ir.maktab.model.Student"></mapping>

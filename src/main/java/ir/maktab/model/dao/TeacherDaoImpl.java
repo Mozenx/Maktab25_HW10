@@ -70,6 +70,18 @@ public class TeacherDaoImpl extends BaseDaoImpl<Teacher> implements  TeacherDao{
 
     @Override
     public List<Teacher> liveInCity(String city) {
-        return null;
+
+        Session session = factory.openSession();
+
+        List<Teacher> teachers;
+
+        teachers = session.createQuery("select t from Teacher t join t.address where t.address.city=:i",Teacher.class)
+                .setParameter("i",city).getResultList();
+
+        List<Teacher> teachers1 = (List<Teacher>) teachers;
+
+        session.close();
+
+        return teachers;
     }
 }
