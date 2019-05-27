@@ -99,4 +99,19 @@ public class TeacherDaoImpl extends BaseDaoImpl<Teacher> implements  TeacherDao{
 
         return teachers;
     }
+
+    @Override
+    public List<Teacher> beingNumberWithLiveInCity(String number, String city) {
+
+        Session session = factory.openSession();
+
+        List<Teacher> teachers;
+
+        teachers = session.createQuery("select t from Teacher t join t.address where t.address.number like :i and t.address.city= :j",Teacher.class)
+                .setParameter("i", number+"%").setParameter("j",city).getResultList();
+
+        session.close();
+
+        return teachers;
+    }
 }

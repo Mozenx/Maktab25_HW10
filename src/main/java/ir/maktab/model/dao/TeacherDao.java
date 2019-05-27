@@ -18,5 +18,5 @@ public interface TeacherDao extends BaseDao<Teacher> {
 
     List<Teacher> beingNumberWith(String number);
 
-    List<Teacher> beingNumberWithLiveInCity();
+    List<Teacher> beingNumberWithLiveInCity(String number, String city);
 }
